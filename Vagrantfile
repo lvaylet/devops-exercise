@@ -41,10 +41,12 @@ Vagrant.configure("2") do |config|
     #}
 
     chef.add_recipe "apt_update"
+
     #chef.add_recipe "nodejs"
     #chef.add_recipe "node_static_server"
-    #chef.add_recipe "nginx"
+
     chef.add_recipe "chef_nginx"
+    chef.add_recipe "nginx_ssl_auth"
   end
 
 end
