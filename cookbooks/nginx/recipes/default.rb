@@ -1,4 +1,9 @@
-package 'nginx'
+package 'nginx' do
+  action :install
+end
+# or simply:
+# package 'nginx'
+# as ':install' is the default action
 
 service 'nginx' do
   supports status: true
