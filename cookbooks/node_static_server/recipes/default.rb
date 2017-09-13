@@ -5,6 +5,8 @@ include_recipe 'nodejs'
 # Install package
 nodejs_npm 'static-server'  # packages are installed globally by default
 
-# Go to the folder you want to served
-
-# Run the server
+# Start server in Chef's log directory
+execute 'run_static_server' do
+  command 'static-server --port 9090'
+  cwd '/var/log'
+end

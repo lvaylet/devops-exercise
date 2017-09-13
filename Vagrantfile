@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
 
   # Network
   config.vm.hostname = "devops-exercise"
-  config.vm.network :forwarded_port, guest: 80, host: 49800
+  config.vm.network :forwarded_port, guest: 9090, host: 49800
 
   # Chef solo provisioning
   config.vm.provision :chef_solo do |chef|
@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "apt_update"
     chef.add_recipe "nodejs"
     chef.add_recipe "node_static_server"
-    chef.add_recipe "nginx"
+    #chef.add_recipe "nginx"
   end
 
 end
