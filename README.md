@@ -35,8 +35,8 @@ vagrant plugin install vagrant-omnibus
 ```bash
 vagrant up
 
-# Browse Chef log
-curl -X GET 'https://localhost:49800'
+# Display Chef log
+curl -X GET --user sammy:pass http://192.168.50.4
 
 # Gracefully shut down the VM
 vagrant halt

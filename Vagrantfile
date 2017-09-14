@@ -22,8 +22,9 @@ Vagrant.configure("2") do |config|
 
   # Network
   config.vm.hostname = "devops-exercise"
-  config.vm.network :forwarded_port, guest: 9090, host: 49800
-  config.vm.network :forwarded_port, guest: 80, host: 49880
+  config.vm.network "private_network", ip: "192.168.50.4"
+  #config.vm.network :forwarded_port, guest: 9090, host: 49800
+  #config.vm.network :forwarded_port, guest: 80, host: 49880
 
   # Chef solo provisioning
   config.vm.provision :chef_solo do |chef|
