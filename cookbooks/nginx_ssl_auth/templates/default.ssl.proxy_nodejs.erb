@@ -1,4 +1,6 @@
-# https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-with-ssl-as-a-reverse-proxy-for-jenkins
+# References:
+# - https://www.digitalocean.com/community/tutorials/how-to-configure-nginx-with-ssl-as-a-reverse-proxy-for-jenkins
+
 server {
     listen 80;
     return 301 https://$host$request_uri;
@@ -7,7 +9,7 @@ server {
 server {
 
     listen 443;
-    server_name devops-exercise;
+    server_name 192.168.50.4;
 
     ssl_certificate           /etc/nginx/cert.crt;
     ssl_certificate_key       /etc/nginx/cert.key;
@@ -31,6 +33,6 @@ server {
       proxy_pass          http://localhost:9090;
       proxy_read_timeout  90;
 
-      proxy_redirect      http://localhost:9090 https://devops-exercise;
+      proxy_redirect      http://localhost:9090 https://192.168.50.4;
     }
   }
