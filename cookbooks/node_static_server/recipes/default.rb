@@ -5,8 +5,8 @@ include_recipe 'nodejs'
 # Install package
 nodejs_npm 'node-static'  # packages are installed globally by default
 
-# Start server in Chef's log directory
+# Start server in the background, inside Chef's log directory (configured in Vagrantfile)
 execute 'run_static_server' do
-  command 'static --port 9090'
+  command 'static --port 9090 &'
   cwd '/var/log'
 end
