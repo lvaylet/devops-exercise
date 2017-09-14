@@ -70,4 +70,8 @@ $ vagrant destroy
 
 # Extra
 
+1. Explain various options available to email the chef-solo log file when the installation is complete.
+TODO
+
+2. Explain various options available to monitor the system logs on this server remotely.
 TODO
