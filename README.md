@@ -36,7 +36,10 @@ vagrant plugin install vagrant-omnibus
 vagrant up
 
 # Display Chef log
-curl -X GET --user sammy:pass http://192.168.50.4
+#
+# Use basic authentication over HTTPS and SSL with unsecured self-signed certificate (for test purposes).
+# If using a browser, you might have to add an exception on every new instance created by `vagrant up` because of the automatically generated self-signed certificate.
+curl -X GET --user sammy:pass --insecure https://192.168.50.4
 
 # Gracefully shut down the VM
 vagrant halt
