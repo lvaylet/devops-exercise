@@ -1,4 +1,6 @@
-include_recipe 'chef_nginx'
+package 'nginx' do
+  action :install
+end
 
 # Setup self-signed certificates in /etc/nginx
 #
@@ -21,8 +23,9 @@ execute 'generate_certs' do
 end
 
 # Configure HTTP basic authentication
-# https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04
-# Create /etc/nginx/.htpasswd
+#
+# References:
+#   - https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04
 file '/etc/nginx/.htpasswd' do
   content 'sammy:$apr1$74cZT6TZ$PmbFy2LAP3c4UP3a5PyEZ1'
 end
@@ -30,11 +33,6 @@ end
 # Render /etc/nginx/sites-available/default
 template '/etc/nginx/sites-available/default' do
   source 'default.ssl_basic_auth.erb'
-end
-
-# Render /usr/share/nginx/html/index.html (the default location served by Apache)
-template '/usr/share/nginx/html/index.html' do
-  source 'index.html.erb'
 end
 
 service 'nginx' do
