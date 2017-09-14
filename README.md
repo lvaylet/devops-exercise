@@ -57,3 +57,13 @@ When you are done, gracefully shut down the VM with:
 ```bash
 $ vagrant halt
 ```
+
+In case you need to provision the VM again after making some changes, you can use:
+```bash
+$ vagrant reload --provision
+```
+
+Finally, to delete the VM and restart from scratch, you can use:
+```bash
+$ vagrant destroy
+```
