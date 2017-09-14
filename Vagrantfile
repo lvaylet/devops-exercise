@@ -30,11 +30,19 @@ Vagrant.configure("2") do |config|
 
     chef.cookbooks_path = "cookbooks"  # default value anyway, sample only
 
+    # Define parameters for the recipes below
+    chef.json = {
+      "send_http_post" => {
+        "endpoint" => "https://arterys.com/install-complete"
+      }
+    }
+
     # Run recipes
     chef.add_recipe "apt_update"
     chef.add_recipe "nodejs"
     chef.add_recipe "node_static_server"
     chef.add_recipe "nginx_ssl_auth"
+    chef.add_recipe "send_http_post"
   end
 
 end
