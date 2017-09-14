@@ -6,6 +6,8 @@ include_recipe 'nodejs'
 nodejs_npm 'node-static'  # packages are installed globally by default
 
 # Start server in the background, inside Chef's log directory (configured in Vagrantfile)
+# FIXME Wrap static server in service to avoid running it in the background manually
+# Also, a service can be restarted or stopped easily.
 execute 'run_static_server' do
   command 'static --port 9090 &'
   cwd '/var/log'
