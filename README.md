@@ -67,3 +67,7 @@ Finally, to delete the VM and restart from scratch, you can use:
 ```bash
 $ vagrant destroy
 ```
+
+# Extra
+
+TODO
