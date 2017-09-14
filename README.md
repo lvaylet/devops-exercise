@@ -2,10 +2,10 @@
 
 > Use `chef-solo` to develop an automated deployment and configuration system
 
-Chef-solo is used to complete the following tasks:
-- Deploy `node-static`, a free static web server available from `npm`, which is run by using `node.js`.
+Chef-solo is used in combination with Vagrant to complete the following tasks:
+- Deploy and daemonize a static web server available from `npm`.
 - Configure the webserver to serve only a single file by default, the chef-solo installation log that is a result of the installation.
-- Install and configure Nginx with access through "https" with "http basic authentication".
+- Install and configure Nginx with access through "https" and "http basic authentication".
 - Issue an http post to a given endpoint, easily configured when executing the chef script (e.g. https://arterys.com/install-complete). It should not post if the endpoint is not configured when the script is run.
 
 # Prerequisites
