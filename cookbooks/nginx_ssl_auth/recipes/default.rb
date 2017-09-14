@@ -29,7 +29,6 @@ end
 
 # Render /etc/nginx/sites-available/default
 template '/etc/nginx/sites-available/default' do
-#  source 'default.basic_auth.erb'
   source 'default.ssl_basic_auth.erb'
 end
 

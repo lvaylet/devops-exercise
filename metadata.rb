@@ -5,4 +5,4 @@ description      'Provision a static server and Nginx'
 version          '0.1.0'
 
 depends 'nodejs'
-depends 'chef_nginx'
+#depends 'chef_nginx'

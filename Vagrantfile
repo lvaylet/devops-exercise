@@ -23,6 +23,7 @@ Vagrant.configure("2") do |config|
   # Network
   config.vm.hostname = "devops-exercise"
   config.vm.network "private_network", ip: "192.168.50.4"
+  config.vm.network :forwarded_port, guest: 9090, host: 9090
   #config.vm.network :forwarded_port, guest: 9090, host: 49800
   #config.vm.network :forwarded_port, guest: 80, host: 49880
 
@@ -43,11 +44,11 @@ Vagrant.configure("2") do |config|
 
     chef.add_recipe "apt_update"
 
-    #chef.add_recipe "nodejs"
-    #chef.add_recipe "node_static_server"
+    chef.add_recipe "nodejs"
+    chef.add_recipe "node_static_server"
 
-    chef.add_recipe "chef_nginx"
-    chef.add_recipe "nginx_ssl_auth"
+    #chef.add_recipe "chef_nginx"
+    #chef.add_recipe "nginx_ssl_auth"
   end
 
 end
