@@ -76,4 +76,4 @@ I would probably use an SMTP server available in Ubuntu, like postfix. It can ea
 
 2. Explain various options available to monitor the system logs on this server remotely.
 
-Monitoring the logs manually could be as simple as logging in through SSH and `tail -f` the relevant log file(s). [Nagios](https://www.nagios.org/) (or any similar monitoring software) is another option if the process needs to be automated, with alerts and notifications when something goes wrong.
+Monitoring the logs manually could be as simple as logging in through SSH and `tail -f` the relevant log file(s). [Nagios](https://www.nagios.org/) or an [Elasticsearch + Logstash + Kibana stack](https://www.digitalocean.com/community/tutorial_series/centralized-logging-with-elk-stack-elasticsearch-logstash-and-kibana-on-ubuntu-14-04) are good options if the process needs to be automated, with alerts and notifications when something goes wrong.
