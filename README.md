@@ -9,7 +9,7 @@ Chef-solo is used in combination with Vagrant to complete the following tasks:
 - Issue an http post to a given endpoint, easily configured when executing the chef script (e.g. https://arterys.com/install-complete). It should not post if the endpoint is not configured when the script is run.
 
 # Prerequisites
-- [Vagrant 1.9.8 (any 1.X should work too, but NOT 2.0 as Berkshelf plugin is not compatible at the time of writing)](https://releases.hashicorp.com/vagrant/1.9.8/)
+- [Vagrant 1.9.8](https://releases.hashicorp.com/vagrant/1.9.8/) (any 1.X should work too, but NOT 2.0 as Berkshelf plugin is not compatible at the time of writing)
 - [Chef Development Kit (ChefDK)](https://downloads.chef.io/chefdk)
 
 # Installation
