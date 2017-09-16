@@ -71,7 +71,9 @@ $ vagrant destroy
 # Extra
 
 1. Explain various options available to email the chef-solo log file when the installation is complete.
-TODO
+
+I would probably use an SMTP server available in Ubuntu, like postfix. It can easily be configured to send emails through an existing third-party email provider (e.g. ops@arterys.com with Google services under the hood). Another option is to [configure postfix as a local send-only SMTP server](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-postfix-as-a-send-only-smtp-server-on-ubuntu-14-04) to remove any dependency on an external provider. Finally, [this tutorial](https://www.frankmitchell.org/2013/03/chef-handlers/) explains how to send email notifications from Chef when the run fails. It could be adjusted to send emails when the installation completes successfully.
 
 2. Explain various options available to monitor the system logs on this server remotely.
-TODO
+
+Monitoring the logs manually could be as simple as logging in through SSH and `tail -f` the relevant log file(s). [Nagios](https://www.nagios.org/) (or any similar monitoring software) is another option if the process needs to be automated, with alerts and notifications when something goes wrong.
